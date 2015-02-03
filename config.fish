@@ -9,11 +9,15 @@ end
 
 ## Function call on exit
 function on_exit --on-process %self
-		 fish_logout
+    fish_logout
 end
 
 ## Load aliases
 alias ls='ls --color=auto'
+
+function urxvt_clone
+    urxvt -cd $PWD &
+end
 
 ## Set environment variables
 set -U EDITOR emacs
