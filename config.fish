@@ -30,3 +30,4 @@ end
 
 ## Rotating rainbow palette because it's the 90s
 set -g rainbow 97080e da4b0f e9b104 488c13 1b55c0
+set -g static_rainbow $rainbow

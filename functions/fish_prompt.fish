@@ -1,24 +1,21 @@
-set fish_git_dirty_color $rainbow[2]
-set fish_git_not_dirty_color $rainbow[4]
-set fish_prompt_color $rainbow[5]
-
-## Git branch parsing. Used for prompt and title.
-# Depends on rainbow palette above
-function parse_git_branch
-    set -l branch (git branch ^/dev/null | grep -e '\*' | sed 's/^..\(.*\)/\1/')
-    set -l git_diff (git diff ^/dev/null)
-
-    if test -n "$git_diff"
-        echo (set_color $fish_git_dirty_color)$branch(set_color normal)
-    else
-        echo (set_color $fish_git_not_dirty_color)$branch(set_color normal)
-    end
-end
+set __fish_git_prompt_showupstream 'yes'
+set __fish_git_prompt_showuntrackedfiles 'yes'
+set __fish_git_prompt_show_informative_status 'yes'
+set __fish_git_prompt_color_merging $static_rainbow[1]
+set __fish_git_prompt_color_dirtystate $static_rainbow[2]
+set __fish_git_prompt_color_stagedstate $static_rainbow[3]
+set __fish_git_prompt_color_upstream $static_rainbow[4]
+set __fish_git_prompt_color_branch $static_rainbow[5]
+set __fish_git_prompt_char_upstream_ahead '↑'
+set __fish_git_prompt_char_upstream_behind '↓'
+set __fish_git_prompt_char_stashstate '✚'
+set __fish_git_prompt_char_stateseparator '╬'
 
 function fish_prompt
  		 set_color normal
  		 echo -n "╭⊸[$USER@"(hostname) (prompt_pwd)" ]"
-    set branch (parse_git_branch)
+    # set branch (parse_git_branch)
+    set branch (__fish_git_prompt | sed s/[\(\)]//g)
     if test -z $branch
         set branch (set_color $rainbow[1])"☯"(set_color normal)
         set -g rainbow $rainbow[2..-1 1]
