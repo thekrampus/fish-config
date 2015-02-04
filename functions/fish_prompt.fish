@@ -4,12 +4,12 @@ set __fish_git_prompt_show_informative_status 'yes'
 set __fish_git_prompt_color_merging $static_rainbow[1]
 set __fish_git_prompt_color_dirtystate $static_rainbow[2]
 set __fish_git_prompt_color_stagedstate $static_rainbow[3]
+set __fish_git_prompt_color_cleanstate $static_rainbow[4]
 set __fish_git_prompt_color_upstream $static_rainbow[4]
 set __fish_git_prompt_color_branch $static_rainbow[5]
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 set __fish_git_prompt_char_stashstate '✚'
-set __fish_git_prompt_char_stateseparator '╬'
 
 function fish_prompt
  		 set_color normal
