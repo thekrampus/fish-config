@@ -3,10 +3,6 @@
 ## Set path
 set PATH $PATH $HOME/bin /usr/sbin /sbin /usr/local/sbin /opt/anaconda/bin
 
-## Disable title message
-function fish_title
-end
-
 ## Function call on exit
 function on_exit --on-process %self
     fish_logout
@@ -25,9 +21,12 @@ set -U BROWSER chromium
 set -U WORKON_HOME ~/.virtualenvs
 bash /usr/bin/virtualenvwrapper.sh
 
-# Start X at login
+## Start X at login
 if status --is-login
     if test -z "$DISPLAY" -a $XDG_VTNR = 1
         exec startx
     end
 end
+
+## Rotating rainbow palette because it's the 90s
+set -g rainbow 97080e da4b0f e9b104 488c13 1b55c0
