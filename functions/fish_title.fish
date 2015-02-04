@@ -1,4 +1,9 @@
 function fish_title
     echo "「$_」 "
-    pwd
+    switch $_
+        case 'htop'
+        case 'irssi'
+        case '*'
+            pwd
+    end
 end
