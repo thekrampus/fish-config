@@ -13,9 +13,9 @@ function urxvt_clone
 end
 
 ## Set environment variables
-set -U EDITOR emacs
-set -U BROWSER chromium
-set -U WORKON_HOME ~/.virtualenvs
+setenv EDITOR emacs
+setenv BROWSER chromium
+setenv WORKON_HOME ~/.virtualenvs
 bash /usr/bin/virtualenvwrapper.sh
 
 ## Start X at login
