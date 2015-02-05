@@ -1,8 +1,5 @@
 ### fish configuration
 
-## Set path
-set PATH $PATH $HOME/bin /usr/sbin /sbin /usr/local/sbin /opt/anaconda/bin
-
 ## Function call on exit
 function on_exit --on-process %self
     fish_logout
@@ -23,6 +20,8 @@ bash /usr/bin/virtualenvwrapper.sh
 
 ## Start X at login
 if status --is-login
+    # Set path
+    set PATH $PATH $HOME/bin /usr/sbin /sbin /usr/local/sbin /opt/anaconda/bin
     if test -z "$DISPLAY" -a $XDG_VTNR = 1
         exec startx
     end
