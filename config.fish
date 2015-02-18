@@ -7,7 +7,7 @@ end
 
 ## Load aliases
 alias ls='ls --color=auto'
-alias matlab='matlab -nodisplay'
+alias matlab='matlab -nodesktop -nosplash'
 alias xmatlab='command matlab'
 
 function urxvt_clone
