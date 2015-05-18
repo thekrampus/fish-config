@@ -2,11 +2,11 @@
 # Note: Doesn't really work for recursive cp
 function cp_meter
     # Get most recent cp invocation
-    set cpid (pgrep -nx cp)
+    set cpid (pgrep -n cp)
 
     if test -z $cpid
         # No cp invocation! Oh no!
-        return -1
+        return
     end
 
     # 7th column of last two lines are size of input and output, respectively
