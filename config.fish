@@ -9,12 +9,14 @@ end
 alias ls='ls --color=auto'
 alias matlab='matlab -nodesktop -nosplash'
 alias xmatlab='command matlab'
+alias ptop='ptop -t light'
 
 function urxvt_clone
     urxvt -cd $PWD &
 end
 
 ## Set environment variables
+setenv LANG en_US.UTF-8
 setenv EDITOR emacs
 setenv BROWSER chromium
 setenv WORKON_HOME ~/.virtualenvs
