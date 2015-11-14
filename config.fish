@@ -10,7 +10,7 @@ alias ls='ls --color=auto'
 alias matlab='matlab -nodesktop -nosplash'
 alias xmatlab='command matlab'
 alias ptop='ptop -t light'
-
+alias rmacs='rm -f *~ \#*\#'
 function urxvt_clone
     urxvt -cd $PWD &
 end
