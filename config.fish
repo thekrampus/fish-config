@@ -15,7 +15,7 @@ alias ptop='ptop -t light'
 alias rmacs='rm -f *~ \#*\#'
 alias wine32='env WINEPREFIX=/home/rob/.wine32 wine'
 alias winefile32='env WINEPREFIX=/home/rob/.wine32 winefile'
-alias steam_fix='env LD_PRELOAD=\'/usr/$LIB/lib/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1\' steam'
+alias steam_fix='env LD_PRELOAD=\'/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1\' steam'
 function urxvt_clone
     urxvt -cd $PWD &
 end
