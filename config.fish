@@ -9,6 +9,8 @@ end
 alias ls='ls --color=auto'
 alias matlab='matlab -nodesktop -nosplash'
 alias xmatlab='command matlab'
+alias octave='octave --no-gui'
+alias xoctave='command octave'
 alias ptop='ptop -t light'
 alias rmacs='rm -f *~ \#*\#'
 function urxvt_clone
