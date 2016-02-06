@@ -13,6 +13,7 @@ alias octave='octave --no-gui'
 alias xoctave='command octave'
 alias ptop='ptop -t light'
 alias rmacs='rm -f *~ \#*\#'
+alias wine32='env WINEPREFIX=/home/rob/.wine32 wine'
 function urxvt_clone
     urxvt -cd $PWD &
 end
