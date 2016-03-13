@@ -5,37 +5,18 @@ function on_exit --on-process %self
     fish_logout
 end
 
+## Load local configuration
+. ~/.config/fish/local.fish
+
 ## Load aliases
 alias ls='ls --color=auto'
-alias matlab='matlab -nodesktop -nosplash'
-alias xmatlab='command matlab'
-alias octave='octave --no-gui'
-alias xoctave='command octave'
-alias ptop='ptop -t light'
-alias xpdf='xpdf -cont'
 alias rmacs='rm -f *~ \#*\#'
-alias wine32='env WINEARCH=win32 WINEPREFIX=/home/rob/.wine32 wine'
-alias winefile32='env WINEARCH=win32 WINEPREFIX=/home/rob/.wine32 winefile'
-alias steam_fix='env LD_PRELOAD=\'/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1\' steam'
-function urxvt_clone
-    urxvt -cd $PWD &
-end
 
 ## Set environment variables
 setenv LANG en_US.UTF-8
 setenv EDITOR emacs
-setenv BROWSER chromium
 setenv WORKON_HOME ~/.virtualenvs
 bash /usr/bin/virtualenvwrapper.sh
-
-## Start X at login
-if status --is-login
-    # Set path
-    setenv PATH $PATH $HOME/bin /usr/sbin /sbin /usr/local/sbin /opt/anaconda/bin
-    if test -z "$DISPLAY" -a $XDG_VTNR = 1
-        exec startx
-    end
-end
 
 ## Rotating rainbow palette because it's the 90s
 # This is a more "skittles" flavoured palette
