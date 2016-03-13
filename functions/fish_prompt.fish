@@ -12,14 +12,18 @@ set __fish_git_prompt_char_upstream_behind '↓'
 set __fish_git_prompt_char_stashstate '✚'
 
 function fish_prompt
- 		 set_color normal
- 		 echo -n "╭⊸[$USER@"(hostname) (prompt_pwd)" ]"
-    # set branch (parse_git_branch)
-    set branch (__fish_git_prompt | sed s/[\(\)]//g)
-    if test -z $branch
-        set branch (set_color $rainbow[1])"☯"(set_color normal)
-        set -g rainbow $rainbow[2..-1 1]
+    if test $TERM = "dumb"
+        echo "\$"
+    else
+ 		     set_color normal
+ 		     echo -n "╭⊸[$USER@"(hostname) (prompt_pwd)" ]"
+        # set branch (parse_git_branch)
+        set branch (__fish_git_prompt | sed s/[\(\)]//g)
+        if test -z $branch
+            set branch (set_color $rainbow[1])"☯"(set_color normal)
+            set -g rainbow $rainbow[2..-1 1]
+        end
+        echo "「$branch」"
+        echo -n "╰⊸"
     end
-    echo "「$branch」"
-    echo -n "╰⊸"
 end
