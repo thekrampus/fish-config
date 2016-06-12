@@ -15,15 +15,21 @@ function fish_prompt
     if test $TERM = "dumb"
         echo "\$"
     else
- 		     set_color normal
- 		     echo -n "╭⊸[$USER@"(hostname) (prompt_pwd)" ]"
-        # set branch (parse_git_branch)
+ 		set_color normal
+ 		echo -n "╭⊸[$USER@"(hostname) (prompt_pwd)" ]"
+
         set branch (__fish_git_prompt | sed s/[\(\)]//g)
         if test -z $branch
             set branch (set_color $rainbow[1])"☯"(set_color normal)
             set -g rainbow $rainbow[2..-1 1]
         end
-        echo "「$branch」"
+        echo -n "「$branch」"
+
+        if test -n "$VIRTUAL_ENV"
+            echo -n "{" (basename "$VIRTUAL_ENV") "}"
+        end
+        
+        echo
         echo -n "╰⊸"
     end
 end
