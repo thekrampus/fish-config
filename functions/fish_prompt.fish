@@ -1,22 +1,32 @@
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_showuntrackedfiles 'yes'
+set __fish_git_prompt_showupstream            'yes'
+set __fish_git_prompt_showuntrackedfiles      'yes'
 set __fish_git_prompt_show_informative_status 'yes'
-set __fish_git_prompt_color_merging $static_rainbow[1]
-set __fish_git_prompt_color_dirtystate $static_rainbow[2]
-set __fish_git_prompt_color_stagedstate $static_rainbow[3]
-set __fish_git_prompt_color_cleanstate $static_rainbow[4]
-set __fish_git_prompt_color_upstream $static_rainbow[4]
-set __fish_git_prompt_color_branch $static_rainbow[5]
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
-set __fish_git_prompt_char_stashstate '✚'
+set __fish_git_prompt_color_merging           $static_rainbow[1]
+set __fish_git_prompt_color_dirtystate        $static_rainbow[2]
+set __fish_git_prompt_color_stagedstate       $static_rainbow[3]
+set __fish_git_prompt_color_cleanstate        $static_rainbow[4]
+set __fish_git_prompt_color_upstream          $static_rainbow[4]
+set __fish_git_prompt_color_branch            $static_rainbow[5]
+set __fish_git_prompt_char_upstream_ahead     '↑'
+set __fish_git_prompt_char_upstream_behind    '↓'
+set __fish_git_prompt_char_stashstate         '✚'
+
+set __fish_prompt_hookup_glyph   '╭⊸'
+set __fish_prompt_hookdown_glyph '╰⊸'
+set __fish_prompt_hook_color     $static_rainbow[4]
+
+## Should look something like this...
+# ╭⊸[rob@starman ~/.c/fish ]「 master↑1|✔」
+# ╰⊸ echo "hey imma computah! stop all th' downloadin'!"
 
 function fish_prompt
     if test $TERM = "dumb"
         echo "\$"
     else
- 		set_color normal
- 		echo -n "╭⊸[$USER@"(hostname) (prompt_pwd)" ]"
+        set_color $__fish_prompt_hook_color
+        echo -n $__fish_prompt_hookup_glyph
+        set_color normal
+        echo -n "[$USER@"(hostname) (prompt_pwd)" ]"
 
         set branch (__fish_git_prompt | sed s/[\(\)]//g)
         if test -z $branch
@@ -28,8 +38,10 @@ function fish_prompt
         if test -n "$VIRTUAL_ENV"
             echo -n "{" (basename "$VIRTUAL_ENV") "}"
         end
-        
+
         echo
-        echo -n "╰⊸"
+        set_color $__fish_prompt_hook_color
+        echo -n $__fish_prompt_hookdown_glyph
+        set_color normal
     end
 end
