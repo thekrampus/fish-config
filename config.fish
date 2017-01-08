@@ -1,10 +1,5 @@
 ### fish configuration
 
-## Function call on exit
-function on_exit --on-process %self
-    fish_logout
-end
-
 ## Load local configuration
 . ~/.config/fish/local.fish
 
