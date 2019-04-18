@@ -1,8 +1,5 @@
 ### fish configuration
 
-## Load local configuration
-. ~/.config/fish/local.fish
-
 ## Load aliases
 alias ls='ls --color=auto'
 alias ll="ls -alh"
@@ -25,3 +22,6 @@ if set -q fish_onload
     eval $fish_onload
     set -e fish_onload
 end
+
+## Load local configuration
+. ~/.config/fish/local.fish
