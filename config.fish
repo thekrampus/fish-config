@@ -24,4 +24,4 @@ if set -q fish_onload
 end
 
 ## Load local configuration
-. ~/.config/fish/local.fish
+. ~/.config/fish/local.d/config.fish
