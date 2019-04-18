@@ -19,4 +19,4 @@ function urxvt_clone
 end
 
 ## Load local aliases
-. ~/.config/fish/local.d/alias.fish
+source ~/.config/fish/local.d/alias.fish

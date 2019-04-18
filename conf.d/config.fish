@@ -1,13 +1,5 @@
 ### fish configuration
 
-if status --is-login
-    ## Set environment variables once on login
-    . ~/.config/fish/env.fish
-end
-
-## Set aliases
-. ~/.config/fish/alias.fish
-
 ## Rotating rainbow palette because it's the 90s
 # This is a more "skittles" flavoured palette
 #set -g rainbow 97080e da4b0f e9b104 488c13 1b55c0
@@ -23,4 +15,4 @@ if set -q fish_onload
 end
 
 ## Load local configuration
-. ~/.config/fish/local.d/config.fish
+source ~/.config/fish/local.d/config.fish
