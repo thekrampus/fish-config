@@ -1,13 +1,12 @@
 ### fish configuration
 
-## Load aliases
-alias ls='ls --color=auto'
-alias ll="ls -alh"
-alias rmacs="rm -f {*~,\#*\#}"
+if status --is-login
+    ## Set environment variables once on login
+    . ~/.config/fish/env.fish
+end
 
-## Set environment variables
-setenv LANG en_US.UTF-8
-setenv EDITOR emacs
+## Set aliases
+. ~/.config/fish/alias.fish
 
 ## Rotating rainbow palette because it's the 90s
 # This is a more "skittles" flavoured palette
