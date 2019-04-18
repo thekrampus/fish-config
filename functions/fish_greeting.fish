@@ -1,5 +1,5 @@
 function fish_greeting
-   if math (random)\>10000 > /dev/null
+   if test (random) -ge 10000 > /dev/null
        fortune zippy
    else
        fortune -a
