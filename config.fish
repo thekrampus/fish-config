@@ -5,13 +5,12 @@
 
 ## Load aliases
 alias ls='ls --color=auto'
-alias rmacs='rm -f *~ \#*\#'
+alias ll="ls -alh"
+alias rmacs="rm -f {*~,\#*\#}"
 
 ## Set environment variables
 setenv LANG en_US.UTF-8
 setenv EDITOR emacs
-setenv WORKON_HOME ~/.virtualenvs
-bash /usr/bin/virtualenvwrapper.sh
 
 ## Rotating rainbow palette because it's the 90s
 # This is a more "skittles" flavoured palette
